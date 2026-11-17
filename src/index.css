@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/* Design tokens: the whole design system. Site is black, white and grey. Red appears only in data. */
+@theme {
+    --spacing: 9px;
+    --font-sans: "DM Sans", system-ui, sans-serif;
+
+    --color-canvas: #f5f6f8;
+    --color-surface: #ffffff;
+    --color-subtle: #eceef2;
+    --color-line: #e0e3e8;
+    --color-ink: #14171c;
+    --color-muted: #5d6571;
+    --color-faint: #8a919c;
+    --color-brand: #14171c;
+    --color-brand-dark: #2a2f38;
+
+    --radius-ui: 9px;
+    --shadow-soft:
+        0 1px 2px rgb(20 23 28 / 0.04), 0 4px 18px rgb(20 23 28 / 0.04);
+}
+
+html {
+    background: var(--color-canvas);
+}
+body {
+    margin: 0;
+    min-width: 320px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-ink);
+    background: var(--color-canvas);
+    text-rendering: optimizeLegibility;
+}
+* {
+    box-sizing: border-box;
+}
+::selection {
+    background: var(--color-ink);
+    color: var(--color-surface);
+}
+:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
